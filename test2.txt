@@ -1,0 +1,6 @@
+Name Score Rank
+ Lee   100    1
+Hong    90    2
+Park    88    3
+ Lim    85    4
+Gong    75    5
