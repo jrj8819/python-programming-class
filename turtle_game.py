@@ -104,7 +104,7 @@ while True:
     check = checkCrash(box_pos, t.xcor(), t.ycor())
     
     if check != -1:
-        removeBox(box, box_pos, check)
+        removeBox(box, box_po s, check)
         
         score += calcScore(t.xcor(), t.ycor(), 0, 0)
         
