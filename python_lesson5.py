@@ -1,5 +1,5 @@
 # 모듈
-"""
+
 만들어 놓은 클래스, 함수, 변수를 별도의 파일로 만들어
 필요할 때 불러와 쓸 수 있도록 하는 방법
 
@@ -8,8 +8,8 @@ import 모듈이름(파일이름)
 모듈이름.함수()
 모듈이름.변수
 모듈이름.객체이름()
-"""
-"""
+
+
 import Calculator
 result = Calculator.mySum(1,2)
 print(result)
@@ -20,9 +20,9 @@ import Person
 p = Person.Person('남')
 p.printGender()
 
-"""
+
 # 또다른 표현방법
-"""
+
 import 모듈이름 as 별명
 from 모듈이름 import [함수이름, 객체이름, 변수이름]
  >> 특정 함수, 객체, 변수 만 가져오므로
@@ -42,26 +42,26 @@ from Circle import *
 print('*'*50)
 c = Circle((0,0), 10)
 print(c.calArea())
-"""
+
 
 # 모듈로 불러올 때 실행하고 싶지 않은 부분 설정
-"""
+
 if __name__ == "__main__":
     실행하고 싶지 않은 부분
 
 __name__ : 파이썬 모듈의 이름을 저장하는 내부 변수
 __main__ : 실행한 파이썬 파일일 경우 저장되는 값
             모듈로 읽어오면 모듈이름이 __name__에 저장
-"""
+
 
 # 패키지
-"""
+
 모듈을 같은 용도에 따라 분류해 놓은 모듈의 모음
 패키지는 파일을 같은 폴더에 넣어 만든다
 
 import 폴더이름.모듈이름
 from 폴더이름.모듈이름 import 함수, 변수, 클래스(객체)
-"""
+
 
 import my.Circle
 c = my.Circle.Circle((0,0), 10)
@@ -73,7 +73,7 @@ print(c.calArea())
 
 
 # 예외처리
-"""
+
 프로그램이 동작하면서(사용자가 사용하면서) 발생하는
 런타임 에러에 대해 대비하기 위한 방법
 
@@ -90,11 +90,11 @@ IndexError : 문자열, 리스트에서 인덱스 잘못 입력한 경우
 
 오류 종류 확인 사이트
 https://docs.python.org/ko/3/library/exceptions.html
-"""
-"""
+
+
 num = int(input())
-"""
-"""
+
+
 try:
     print(100/num)
     print(num2)
@@ -102,14 +102,14 @@ except ZeroDivisionError as e:
     print("에러가 발생하였습니다 : %s." % e)
 except NameError as e:
     print("에러가 발생하였습니다 : %s." % e)
-"""
-"""
+
+
 except 부분은 에러 종류에 따라 여러개 쓸 수 있다.
 
 에러 종류가 불분명 할때는 Exception 키워드를 오류이름
 대신에 쓴다.
-"""
-"""
+
+
 try:
     print(100/num)
     print(num2)
@@ -118,9 +118,9 @@ except Exception as e:
 
     if e == "division by zero":
         print("0으로 나눌수 없습니다.")
-"""
 
-"""
+
+
 try:
     에러가 날수도 있는 부분
 except 오류이름 as 오류메시지변수:
@@ -129,8 +129,8 @@ else:
     오류가 발생하지 않았 때
 finally:
     오류가 발생/발생하지 않았을 때 모두 실행되는 부분 
-"""
-"""
+
+
 try:
     f = open('c:\song123.txt', 'r')
 except FileNotFoundError as e:
@@ -139,7 +139,7 @@ else:
     print(f.read())
 finally:
     f.close()
-"""
+
 # Quiz
 # myDiv()함수에 0으로 나누었을 때 발생하는
 # 예외 처리를 적용해 봅시다.
@@ -149,7 +149,7 @@ finally:
 
 
 # 오류 발생시키는 키워드 raise
-"""
+
 raise 오류이름
 
 해당 오류를 발생시키는 동작을 한다.
@@ -159,8 +159,8 @@ raise 오류이름
 
 2) 사용자가 정의한 에러를 실행시킬 때
 활용한다.
-"""
-"""
+
+
 def myDiv2(a,b):
     try:
         # 숫자를 직접 나누는 대신에
@@ -178,27 +178,27 @@ def myDiv2(a,b):
     else:
         return result
 
-"""
+
 # 사용자 정의 예외
-"""
+
 사용자가 프로그램의 용도 / 특징에 맞게 정의한 예외
 
 Exception 클래스를 상속받아 만든다.
-"""
+
 
 class MyException(Exception):
     msg = "입력 내용이 잘못 되었습니다."
 
     def __str__(self):
         return self.msg
-"""
+
 u_input = input()
 if u_input == "":
     raise MyException
 else:
     print(u_input)
-"""
-"""
+
+
 u_input = input()
 try:
     if u_input == "":
@@ -207,7 +207,7 @@ try:
         print(u_input)
 except MyException as e:
     print(e)
-"""
+
 # 자주쓰는 내장 함수
 
 print(abs(-1.2))
@@ -223,10 +223,10 @@ print(dir(c))
 print(divmod(10,5))
 
 # 1) enumerate
-"""
+
 for문에서 리스트를 활용할 때
 인덱스와 값을 같이 for문 내에서 쓸 수 있다.
-"""
+
 idx = 0
 for i in ['a','b','c']:
     print(idx)
@@ -322,9 +322,9 @@ print(5 ** 2)
 print(pow(5,2))
 
 # 범위를 지정하는 range
-"""
+
 range(첫번호, 끝번호, 간격)
-"""
+
 print(list(range(0, 10, 2))) # 0,2,4,6,8
 
 # 리스트 안에 내용을 정렬하는 sorted
@@ -358,11 +358,11 @@ print(today[2])
 
 
 # time.sleep(10)
-"""
+
 for i in range(100):
     print(i+1)
     time.sleep(1)
-"""
+
 
 
 
